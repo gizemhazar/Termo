@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ThermoProps</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_database_fragment">DatabaseFragment</string>
+    <string name="title_activity_results">ResultsActivity</string>
+
+    <!-- Headers -->
+    <string name="query_params_head">Query Parameters</string>
+    <string name="pres_temp_sechead">Pressure or/and Temperature</string>
+    <string name="fluid_type_sechead">Fluid Type</string>
+    <string name="xvuhs_sechead">Vapor Quality \'x\' or v/u/h/s</string>
+
+    <!-- Button texts -->
+    <string name="show_results_btn">SHOW RESULTS</string>
+    <string name="show_more_properties_btn">MORE PROPERTIES</string>
+    <string name="show_less_properties_btn">LESS PROPERTIES</string>
+
+    <!-- EditText Hint Texts -->
+    <string name="enter_value">Enter a value</string>
+
+    <!-- RadioButton Texts -->
+    <string name="rbtn_water">Water</string>
+    <string name="rbtn_r134a">Refrigerant-134a</string>
+
+    <!-- Checkbox Texts -->
+    <string name="cbox_pres">Pressure</string>
+    <string name="cbox_temp">Temperature</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>

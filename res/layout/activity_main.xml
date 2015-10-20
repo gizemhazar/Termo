@@ -1,0 +1,280 @@
+
+
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    tools:context=".com.example.termo.MainActivity" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/water_v2_transp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin" >
+
+            <!-- Query Parameters - Heading -->
+
+            <TextView
+                android:id="@+id/textview_head_queryparams"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:text="@string/query_params_head"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/primary_text_light" />
+
+            <!-- Fluid Type Section -->
+
+            <LinearLayout
+                android:id="@+id/linlay_section_fluidtype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textview_head_queryparams"
+                android:layout_marginTop="25dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textview_section_fluidtype"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fluid_type_sechead"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/primary_text_light" />
+
+                <RadioGroup
+                    android:id="@+id/rgroup_fluidtype"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/rbtn_water"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rbtn_water"
+                        android:textColor="@android:color/primary_text_light" />
+
+                    <RadioButton
+                        android:id="@+id/rbtn_r134a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:text="@string/rbtn_r134a"
+                        android:textColor="@android:color/primary_text_light" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <!-- Pressure or/and Temperature Section -->
+
+            <LinearLayout
+                android:id="@+id/linlay_section_prestemp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linlay_section_fluidtype"
+                android:layout_marginTop="25dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textview_section_prestemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pres_temp_sechead"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/primary_text_light" />
+
+                <!-- Pressure Checkbox & EditText & Spinner -->
+
+                <LinearLayout
+                    android:id="@+id/linlay_edit_presline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <CheckBox
+                        android:id="@+id/cbox_pres"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="3.26"
+                        android:onClick="onCheckBoxClicked"
+                        android:text="@string/cbox_pres"
+                        android:textColor="@android:color/primary_text_light" />
+
+                    <LinearLayout
+                        android:id="@+id/linlay_hidden_presline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+                        android:orientation="horizontal"
+                        android:visibility="invisible" >
+
+                        <EditText
+                            android:id="@+id/edittext_pres"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:ems="6"
+                            android:hint="@string/enter_value"
+                            android:inputType="numberDecimal"
+                            android:textColor="@android:color/primary_text_light"
+                            android:textColorHint="@android:color/primary_text_light" >
+
+                            <!-- <requestFocus /> -->
+                        </EditText>
+
+                        <Spinner
+                            android:id="@+id/spin_pres_units"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2.40"
+                            android:drawSelectorOnTop="true" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Temperature Checkbox & EditText & Spinner -->
+
+                <LinearLayout
+                    android:id="@+id/linlay_edit_templine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <CheckBox
+                        android:id="@+id/cbox_temp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="3.67"
+                        android:onClick="onCheckBoxClicked"
+                        android:text="@string/cbox_temp"
+                        android:textColor="@android:color/primary_text_light" />
+
+                    <LinearLayout
+                        android:id="@+id/linlay_hidden_templine"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+                        android:orientation="horizontal"
+                        android:visibility="invisible" >
+
+                        <EditText
+                            android:id="@+id/edittext_temp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:ems="6"
+                            android:hint="@string/enter_value"
+                            android:inputType="numberDecimal"
+                            android:textColor="@android:color/primary_text_light"
+                            android:textColorHint="@android:color/primary_text_light" >
+
+                            <!-- <requestFocus /> -->
+                        </EditText>
+
+                        <Spinner
+                            android:id="@+id/spin_temp_units"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2.38"
+                            android:drawSelectorOnTop="true" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- End of Section -->
+            </LinearLayout>
+
+            <!-- Vapor Quality 'x' or v/u/h/s Section -->
+
+            <LinearLayout
+                android:id="@+id/linlay_section_xvuhs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linlay_section_prestemp"
+                android:layout_marginTop="25dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textview_section_xvuhs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/xvuhs_sechead"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/primary_text_light" />
+
+                <!-- Vapor Quality 'x' or v/u/h/s Section Views -->
+
+                <LinearLayout
+                    android:id="@+id/linlay_edit_xvuhsline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <!-- xvuhs Spinner -->
+
+                    <Spinner
+                        android:id="@+id/spin_xvuhs"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3.74"
+                        android:drawSelectorOnTop="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="  =  "
+                        android:textColor="@android:color/primary_text_light" />
+
+                    <EditText
+                        android:id="@+id/edittext_xvuhs"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5.19"
+                        android:ems="6"
+                        android:hint="@string/enter_value"
+                        android:inputType="numberDecimal"
+                        android:textColor="@android:color/primary_text_light"
+                        android:textColorHint="@android:color/primary_text_light" >
+
+                        <!-- <requestFocus /> -->
+                    </EditText>
+
+                    <Spinner
+                        android:id="@+id/spin_xvuhs_units"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4.54"
+                        android:drawSelectorOnTop="true" />
+
+                    <!-- End of Section Views -->
+                </LinearLayout>
+                <!-- End of Section -->
+            </LinearLayout>
+
+            <!-- Show Results Button -->
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linlay_section_xvuhs"
+                android:onClick="showResults"
+                android:text="@string/show_results_btn" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>
